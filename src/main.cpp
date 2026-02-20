@@ -53,6 +53,9 @@ void loop() {
 
     touchState = digitalRead(TOUCH_PIN);
 
-    Serial.print("Touch State: ");
-    Serial.println(touchState);
+    if (touchState == HIGH) {
+        Serial.println("Touch Detected");
+    } else {
+        Serial.println("No Touch");
+    }
 }
