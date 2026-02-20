@@ -21,8 +21,27 @@ const uint8_t TOUCH_PIN = 2;
 /** @brief Variable to store touch sensor state */
 uint8_t touchState = LOW;
 
+/**
+ * @brief Arduino setup function
+ *
+ * Initializes serial communication,
+ * configures touch pin, and prints
+ * system startup message.
+ */
 void setup() {
 
+    Serial.begin(9600);
+
+    while (!Serial) {
+        ; // Wait for Serial (Uno R4 recommendation)
+    }
+
+    pinMode(TOUCH_PIN, INPUT);
+
+    Serial.println("=================================");
+    Serial.println(" Embedded Touch Detection System ");
+    Serial.println(" TTP223 Sensor Initialized ");
+    Serial.println("=================================");
 }
 
 void loop() {
