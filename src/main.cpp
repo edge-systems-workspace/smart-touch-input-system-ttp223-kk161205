@@ -44,6 +44,15 @@ void setup() {
     Serial.println("=================================");
 }
 
+/**
+ * @brief Arduino main execution loop
+ *
+ * Reads digital touch state and processes logic.
+ */
 void loop() {
 
+    touchState = digitalRead(TOUCH_PIN);
+
+    Serial.print("Touch State: ");
+    Serial.println(touchState);
 }
